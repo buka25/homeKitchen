@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home Kitchen</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-900 font-sans">
+
+  <!-- Header -->
+    {% include "header.html" %}
+  <!-- Header -->
+
+  <!-- Hero Image -->
+  <section>
+    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Kitchen Hero" class="w-full h-[550px] object-cover">
+  </section>
+
+  <!-- Services -->
+  <section class="py-12 bg-gray-50">
+    <h2 class="text-2xl font-semibold text-red-700 mb-8 text-center">Design & Installation Services</h2>
+    
+    <div id="carousel" class="flex overflow-x-auto snap-x snap-mandatory space-x-4 px-6 max-w-12xl mx-auto">
+      <img src="https://dcassa.com/wp-content/uploads/2024/01/DCASSA-LOMBARDO-255936-Large.jpg.webp" class="snap-center flex-shrink-0 w-80 rounded-lg shadow h-[400px]" />
+      <img src="https://i.pinimg.com/736x/09/6f/9d/096f9d7e7e10c810b3dbd0ae9af442b7.jpg" class="snap-center flex-shrink-0 w-80 rounded-lg shadow" />
+      <img src="https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg" class="snap-center flex-shrink-0 w-80 rounded-lg shadow" />
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUySmrC3yTMxnZZZNpv0X4qiVc_8jv02lA4cPXqipJUnvLLn-FZp9p1T3ZCZBl2YtZX4k&usqp=CAU" class="snap-center flex-shrink-0 w-80 rounded-lg shadow" />
+      <img src="https://img.freepik.com/free-photo/beautiful-shot-modern-house-kitchen_181624-2943.jpg" class="snap-center flex-shrink-0 w-80 rounded-lg shadow" />
+      <img src="https://dcassa.com/wp-content/uploads/2024/01/DCASSA-LOMBARDO-255936-Large.jpg.webp" class="snap-center flex-shrink-0 w-80 rounded-lg shadow" />
+    </div>
+  </section>
+  
+
+  <!-- Description Section -->
+  <section class="bg-white py-16 px-6">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <div class="space-y-6 bg-gray-50 p-6 rounded-lg shadow">
+        <p>
+            Бид мэргэжлийн ажилтнаа таны гэрт илгээж, орчны хэмжилтийг нарийн хийж, зай талбайн оновчтой шийдлийг санал болгодог. Хаашаа ч багтахгүй, орон зай дутмаг гэдэг асуудал үгүй болно.        </p>
+        <p>
+            Бид таны гал тогооны төлөвлөгөөг компьютер дээр 3D загвараар зурж харуулдаг. Ингэснээр та тавилгаа захиалахаасаа өмнө яг ямар харагдах, ямар өнгө загвар тохирохыг урьдчилан харах боломжтой. Өнгө, загвар, хийц дээр шууд санал солилцож, төгс шийдэл гаргаж чадна.        </p>
+        <p>
+            Бид Европын болон дотоодын чанартай тоноглолууд (шүүгээний механизм, гүйдэг систем, зөөлөн хаагч, нугастай хаалга, ухаалаг тавиур г.м) ашигладаг. Та өөрийн хэрэгцээнд тохируулан үнэтэй, хямд, өндөр чанартай шийдлүүдээс сонголт хийх бүрэн боломжтой.        </p>
+        <p>Манай дизайнерууд таны хүсэлд бүрэн нийцсэн гоо зүй + практик хэрэглээ хосолсон шийдлийг гаргана. Тавилгаа бусдынхаас өөр, өөрийн хэв маягтай болгохыг хүсдэг хүн бүрт тохирно.</p> 
+        <p>  Бидний ашигладаг хавтан, гадаргуу, булан, өнгөлгөөний материалууд нь ус, дулаан, цэвэрлэгээний бодист тэсвэртэй, удаан эдэлгээтэй байдаг. Хүүхэдтэй айл, идэвхтэй гал тогооны орчинд төгс тохирно.   </p>    
+    </div>
+      <img src="https://images.unsplash.com/photo-1565538810643-b5bdb714032a?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8a2l0Y2hlbnxlbnwwfHwwfHx8MA%3D%3D" class="rounded-lg shadow-lg" />
+    </div>
+  </section>
+  
+    <!-- About -->
+    {% include "pages/about.html" %}
+    <!-- About -->
+  
+    <!-- Catalogy -->
+    {% include "pages/catalogy.html" %}
+    <!-- Catalogy -->
+  
+    <!-- Resource -->
+    {% include "pages/resource.html" %}
+    <!-- Resource -->
+
+    <!-- Footer -->
+    {% include "footer.html" %}
+    <!-- Footer -->
+
+  <script>
+    const carousel = document.getElementById('carousel');
+    let scrollAmount = 0;
+  
+    setInterval(() => {
+      scrollAmount += 280; // зургуудын өргөн + зай
+      if(scrollAmount >= carousel.scrollWidth - carousel.clientWidth) {
+        scrollAmount = 0;
+      }
+      carousel.scrollTo({
+        left: scrollAmount,
+        behavior: 'smooth'
+      });
+    }, 3000);
+  </script>  
+
+</body>
+</html>
