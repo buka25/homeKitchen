@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home Kitchen</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 70px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+
+</style>
+</head>
+<body class="bg-gray-100 text-gray-900 font-sans">
+
+    <!-- Header -->
+        {% include "header.html" %}
+    <!-- Header -->
+
+    <section id="resource" class="bg-white py-16 px-6">
+        <div class="max-w-6xl mx-auto">
+          <!-- Google Map -->
+          <div class="w-full h-[400px] mb-10 shadow-lg rounded-lg overflow-hidden">
+            <iframe 
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2925.311022243322!2d106.8814811!3d47.8937966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5d96907b78dc3291%3A0x7728d5914999eb2c!2sMisheel%20Expo!5e0!3m2!1sen!2smn!4v1715861282796!5m2!1sen!2smn" 
+  width="100%" 
+  height="100%" 
+  style="border:0;" 
+  allowfullscreen="" 
+  loading="lazy" 
+  referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+
+          </div>
+      
+          <!-- Contact Info -->
+          <div class="text-center text-gray-800">
+            <p class="mb-6">Цахим хаяг: 
+              <a href="mailto:ceo@homekitchen.mn" class="underline text-red-600 hover:text-red-800">ceo@homekitchen.mn</a>
+            </p>
+      
+            <!-- Social Icons -->
+            <div class="flex justify-center space-x-8 text-3xl">
+                <a href="https://www.facebook.com/homekitchenllc" class="fa fa-facebook"></a>
+                <a href="https://www.instagram.com/home_kitchen_llc/" class="fa fa-instagram"></a>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+
+    <!-- Footer -->
+    {% include "footer.html" %}
+    <!-- Footer -->
+
+  <script>
+    const carousel = document.getElementById('carousel');
+    let scrollAmount = 0;
+  
+    setInterval(() => {
+      scrollAmount += 280; // зургуудын өргөн + зай
+      if(scrollAmount >= carousel.scrollWidth - carousel.clientWidth) {
+        scrollAmount = 0;
+      }
+      carousel.scrollTo({
+        left: scrollAmount,
+        behavior: 'smooth'
+      });
+    }, 3000);
+  </script>  
+
+</body>
+</html>
