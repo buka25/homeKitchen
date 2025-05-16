@@ -10,3 +10,6 @@ def catalogy(request):
 
 def resource(request):
     return render(request, 'pages/resource.html')
+
+def contact(request):
+    return render(request, 'pages/contact.html')
