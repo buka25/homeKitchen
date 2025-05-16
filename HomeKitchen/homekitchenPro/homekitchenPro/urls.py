@@ -20,5 +20,8 @@ from homekitchenApp import views
 
 urlpatterns = [
     path('', views.index, name='home'),
+    path('about/', views.about, name='about'),
+    path('catalogy/', views.catalogy, name='catalogy'),
+    path('resource/', views.resource, name='resource'),
     path('admin/', admin.site.urls),
 ]

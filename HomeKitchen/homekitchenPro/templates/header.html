@@ -1,12 +1,30 @@
 <header class="bg-white shadow sticky top-0 z-10">
-    <div class="container mx-auto px-6 py-5 flex items-center justify-between">
-      <div class="text-xl font-bold text-red-700">HOME <span class="text-gray-700">KITCHEN</span></div>
-      <nav class="space-x-10 text-sm">
-        <a href="#" class="bg-red-700 text-white px-5 py-3 rounded-full">Нүүр</a>
-        <a href="#about" class="hover:underline">Бидний Тухай</a>
-        <a href="#catalogy" class="hover:underline">Каталог</a>
-        <a href="#resource" class="hover:underline">Хүний Нөөц</a>
-        <a href="#contact" class="bg-red-700 text-white px-5 py-3 rounded-md">Холбоо барих</a>
-      </nav>
-    </div>
-  </header>
+  <div class="container mx-auto px-6 py-5 flex items-center justify-between">
+    <div class="text-xl font-bold text-red-700">HOME <span class="text-gray-700">KITCHEN</span></div>
+    
+    <!-- Меню -->
+    <nav class="space-x-8 text-sm flex items-center">
+      <a href="{% url 'home' %}"
+         class="{% if request.path == '/' %}bg-red-700 text-white px-5 py-3 rounded-full{% else %}hover:underline{% endif %}">
+         Нүүр
+      </a>
+
+      <a href="{% url 'about' %}"
+         class="{% if request.path == '/about/' %}bg-red-700 text-white px-5 py-3 rounded-full{% else %}hover:underline{% endif %}">
+         Бидний Тухай
+      </a>
+
+      <a href="{% url 'catalogy' %}"
+         class="{% if request.path == '/catalogy/' %}bg-red-700 text-white px-5 py-3 rounded-full{% else %}hover:underline{% endif %}">
+         Каталог
+      </a>
+
+      <a href="{% url 'resource' %}"
+         class="{% if request.path == '/resource/' %}bg-red-700 text-white px-5 py-3 rounded-full{% else %}hover:underline{% endif %}">
+         Хүний Нөөц
+      </a>
+
+      <a href="#contact" class="bg-red-700 text-white px-5 py-3 rounded-md">Холбоо барих</a>
+    </nav>
+  </div>
+</header>
